@@ -1,16 +1,16 @@
 THE OSI MODEL HISTORY
 =====================
 
-The OSI model was designed by the ISO (International Organisation for Standardization). This was done to make it possible for different systems to be able to communicate with each other as in the early days of computing this wasnt that easy. In the early days you usaly bought a system from a vendor and then had to buy all the other things you needed from the same vendor. As the OSI model was developed as a way to set a standart that every system could use, made that the buyer was no longer depended on the vendors. 
-The OSI model was made as a guideline for how network communication should take place. Early experiance with the forefathers of the internet as we now know it lead to a layered approch. This made it possible to change a part of the system without making other parts fail, they are independed of eachother. As each layer does a specific task and only that. There is ofcourse the issue of the intercommunication between layers.
-The model is build up of two maiuer components, a layered structure and a set of defined protocols.
-So what are the advantages to this model? As first: by deviding a big thing in smaller things makes it easier to solve problems. As there is a layered strukture the vendors can write to a common in- and output so that theire application doesnt need to do all the comminicating with all the other things but to a common one. Also the layers are not depending on eachother, meaning that changes in one layer do not affect the other layers. The devision in layers makes it easier to standerdise functions. And ofcourse it works with different types of hardware and software.
+The OSI model was designed by the ISO (International Organization for Standardization). This was done to make it possible for different systems to be able to communicate with each other as in the early days of computing this wasn't that easy. In the early days you usually bought a system from a vendor and then had to buy all the other things you needed from the same vendor. As the OSI model was developed as a way to set a standard that every system could use, made that the buyer was no longer depended on the vendors. 
+The OSI model was made as a guideline for how network communication should take place. Early experience with the forefathers of the Internet as we now know it lead to a layered approach. This made it possible to change a part of the system without making other parts fail, they are independent of each other. As each layer does a specific task and only that. There is ofcourse the issue of the intercommunication between layers.
+The model is build up of two mayor components, a layered structure and a set of defined protocols.
+So what are the advantages to this model? As first: by dividing a big thing in smaller things makes it easier to solve problems. As there is a layered structure the vendors can write to a common in- and output so that their application doesn't need to do all the communicating with all the other things but to a common one. Also the layers are not depending on each other, meaning that changes in one layer do not affect the other layers. The devision in layers makes it easier to standardize functions. And of course it works with different types of hardware and software.
 Another used model for communication is the TCP/IP model that only has 5 layers.
 
 THE 7 LAYERS OF THE MODEL
 -------------------------
 
-The OSI model from ISO has 7 layers. These make up the model. An easy way of remembering the strukture is the following: "All People Seem To Need Data Processing". This it a common way for students to remember the sequence of the layers:
+The OSI model from ISO has 7 layers. These make up the model. An easy way of remembering the structure is the following: "All People Seem To Need Data Processing". This it a common way for students to remember the sequence of the layers:
 
 7 Application 
 6 Presentation
@@ -21,30 +21,30 @@ The OSI model from ISO has 7 layers. These make up the model. An easy way of rem
 1 Physical
 
 The Application layer there is layer that is the closed to the end-user. In this layer all the applications communicate with if they implement a communication component. This could be a chat program, a file charing app or a browser. 
-The Presentation layer handels the mapping between the different application layer entities, meaning that it handles diffent syntaxes and encryption by doing all the translation. So the all this layer does is making sure that all the data that it gets from the layers below is formatted in such a way that the application layer can use it.
-The Session layer controles the connection between hosts.
-The Transport layer is the layer that handles the actual host-to-host connection accros the network, this means that it establiches the connection between hosts and provides a connection. This can be a relayable or unrelayeable one. It also handles error correction and recovery. Typical examples of this layer are the TCP and UDP protocols.
-The Network layer adds the means to send data from hosts to another. This is done by adding destination to the message and letting the network find a way to deliver the data. The layer can also provide a way to split data into smaller packages, sending the packages and reasembeling the data. Also error reporing and delivery statuses. The layer is not garanteed to be relayable.
-The Data-link layer does provide a relayable link between to hosts that are directly connected. It also provides error correction and collision detection.
+The Presentation layer handles the mapping between the different application layer entities, meaning that it handles different syntaxes and encryption by doing all the translation. So the all this layer does is making sure that all the data that it gets from the layers below is formatted in such a way that the application layer can use it.
+The Session layer controls the connection between hosts.
+The Transport layer is the layer that handles the actual host-to-host connection across the network, this means that it establishes the connection between hosts and provides a connection. This can be a reliable or unreliable one. It also handles error correction and recovery. Typical examples of this layer are the TCP and UDP protocols.
+The Network layer adds the means to send data from hosts to another. This is done by adding destination to the message and letting the network find a way to deliver the data. The layer can also provide a way to split data into smaller packages, sending the packages and reassembling the data. Also error reporting and delivery statuses. The layer is not guaranteed to be reliable.
+The Data-link layer does provide a reliable link between to hosts that are directly connected. It also provides error correction and collision detection.
 The Physical layer is the one that deals with the actual hardware, hence the physical layer. This could be done over different types of connections as the model is hardware independent.
 
-Data gets encapluslated by the layers. This is done by adding a protocol dependend header to the data. As the data travels down trough the model each protocol adds its header (and sometimes trailer). These can be used by the same protocols on the other node to pass up in the model. So encapsulating is adding protocol dependend headers, decapsulation is examening, prosessing and removing headers from data.
+Data gets encapsulated by the layers. This is done by adding a protocol depended header to the data. As the data travels down trough the model each protocol adds its header (and sometimes trailer). These can be used by the same protocols on the other node to pass up in the model. So encapsulating is adding protocol depended headers, decapsulation is examining, processing and removing headers from data.
 
 PROTOCOLS IN THE MODEL
 ----------------------
 
-List of which protocol lives in which layer can be found on the internet so they will not be listed here to make up the pages. This will be done by cleaver use of fonts and layout. A protocol is a set of formal rules describing how to transmit or exchange data, they are a collection of standaards that, again, are designed by the ISO. The protocols that are defined to the OSI model where later adapted to the TCP/IP model.
+List of which protocol lives in which layer can be found on the Internet so they will not be listed here to make up the pages. This will be done by cleaver use of fonts and layout. A protocol is a set of formal rules describing how to transmit or exchange data, they are a collection of standards that, again, are designed by the ISO. The protocols that are defined to the OSI model where later adapted to the TCP/IP model.
 The protocols add headers and tailers to the data they process, this allows for the same protocols to process the data if this is moving back up in the stack.
-As the protocols are devided into the 7 layers they handle the movement of data and the way the data is formatted. They respond to different in- and output that they recieve. The protocols are also desigend to work with the framwork provided by the model, this makes them platform independ.
-As there are much protocols that have the same function, they do not differ much as the use the same idea and priciples. They need to handle some things:
-- The way data is represented, the formatting of it, especialy for exchange.
+As the protocols are divided into the 7 layers they handle the movement of data and the way the data is formatted. They respond to different in- and output that they receive. The protocols are also designed to work with the framework provided by the model, this makes them platform independent.
+As there are much protocols that have the same function, they do not differ much as the use the same idea and principles. They need to handle some things:
+- The way data is represented, the formatting of it, especially for exchange.
 - The same for addresses
 - Detection of transmitting errors.
-- A way to verify that data is recieved.
-- Methodes to handle the loss of data, and the recovery of it, the number of retries before another route is chosen.
-- Secuence control.
+- A way to verify that data is received.
+- Methods to handle the loss of data, and the recovery of it, the number of retries before another route is chosen.
+- Sequence control.
 - Flow control.
-If the algorithm that makes up the protocol can do all the above things it can be truely called a communicating protocol.
+If the algorithm that makes up the protocol can do all the above things it can be truly called a communicating protocol.
 
 SOURCES
 https://tools.ietf.org/html/rfc3439
