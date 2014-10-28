@@ -2,15 +2,19 @@ THE OSI MODEL HISTORY
 =====================
 
 The OSI model was designed by the ISO (International Organization for Standardization). This was done to make it possible for different systems to be able to communicate with each other as in the early days of computing this wasn't that easy. In the early days you usually bought a system from a vendor and then had to buy all the other things you needed from the same vendor. As the OSI model was developed as a way to set a standard that every system could use, made that the buyer was no longer depended on the vendors. 
-The OSI model was made as a guideline for how network communication should take place. Early experience with the forefathers of the Internet as we now know it lead to a layered approach. This made it possible to change a part of the system without making other parts fail, they are independent of each other. As each layer does a specific task and only that. There is ofcourse the issue of the intercommunication between layers.
-The model is build up of two mayor components, a layered structure and a set of defined protocols.
+The OSI model was made as a guideline for how network communication should take place. Early experience with the forefathers of the Internet as we now know it lead to a layered approach. This made it possible to change a part of the system without making other parts fail, they are independent of each other. As each layer does a specific task and only that. There is of course the issue of the intercommunication between layers.
 So what are the advantages to this model? As first: by dividing a big thing in smaller things makes it easier to solve problems. As there is a layered structure the vendors can write to a common in- and output so that their application doesn't need to do all the communicating with all the other things but to a common one. Also the layers are not depending on each other, meaning that changes in one layer do not affect the other layers. The devision in layers makes it easier to standardize functions. And of course it works with different types of hardware and software.
 Another used model for communication is the TCP/IP model that only has 5 layers.
+
+INTRODUCTION
+------------
+
+The Open Systems Interconnection (OSI) model describes how information from a software application in one computer mover through a network medium to a software application in another computer. It is made up from 7 layers that specify particular network functions. The model divides the tasks that are needed to move information in the network into seven smaller task groups. A task or group of tasks is then put into one of the seven layers. Each layer is self-contained so that the tasks assigned to that layer can be implemented independently. The makes it so that the the messages provided by one layer to be changed without affecting the other layers. 
 
 THE 7 LAYERS OF THE MODEL
 -------------------------
 
-The OSI model from ISO has 7 layers. These make up the model. An easy way of remembering the structure is the following: "All People Seem To Need Data Processing". This it a common way for students to remember the sequence of the layers:
+The OSI model from ISO has 7 layers. These make up the model. The model is in essence a framework for communication between computers, the model itself is not a method of communication. This is made possible by the communication protocols. An easy way of remembering the structure is the following: "All People Seem To Need Data Processing". This it a common way for students to remember the sequence of the layers:
 
 7 Application 
 6 Presentation
@@ -20,35 +24,60 @@ The OSI model from ISO has 7 layers. These make up the model. An easy way of rem
 2 Data link
 1 Physical
 
-The Application layer there is layer that is the closed to the end-user. In this layer all the applications communicate with if they implement a communication component. This could be a chat program, a file charing app or a browser. 
-The Presentation layer handles the mapping between the different application layer entities, meaning that it handles different syntaxes and encryption by doing all the translation. So the all this layer does is making sure that all the data that it gets from the layers below is formatted in such a way that the application layer can use it.
-The Session layer controls the connection between hosts.
-The Transport layer is the layer that handles the actual host-to-host connection across the network, this means that it establishes the connection between hosts and provides a connection. This can be a reliable or unreliable one. It also handles error correction and recovery. Typical examples of this layer are the TCP and UDP protocols.
-The Network layer adds the means to send data from hosts to another. This is done by adding destination to the message and letting the network find a way to deliver the data. The layer can also provide a way to split data into smaller packages, sending the packages and reassembling the data. Also error reporting and delivery statuses. The layer is not guaranteed to be reliable.
-The Data-link layer does provide a reliable link between to hosts that are directly connected. It also provides error correction and collision detection.
-The Physical layer is the one that deals with the actual hardware, hence the physical layer. This could be done over different types of connections as the model is hardware independent.
+Physical layer
++++++++++++++
 
-Data gets encapsulated by the layers. This is done by adding a protocol depended header to the data. As the data travels down trough the model each protocol adds its header (and sometimes trailer). These can be used by the same protocols on the other node to pass up in the model. So encapsulating is adding protocol depended headers, decapsulation is examining, processing and removing headers from data.
+The first layer defines the physical link between communicating network systems, this ranges from the electrical, mechanical and procedural specifications for activating, maintaining and deactivating the link. The physical layer handles the voltage levels, timing of them, data rates, transmission distances and physical connectors. They can be categorized as either LAN or WAN specifications.
+
+Data-link layer
++++++++++++++++
+
+The data-link layer ensures a reliable transit of data across the physical network link. It also defines differed network and protocol characteristics. These include physical addressing, network topology, error detection, sequencing of frames and flow control. Physical addressing is the way how devices at the physical layer are given an address. Network topology is how physical devices are physically connected. Error detection alerts upper layers about errors in the transmission and sequencing of data frames requests resending of frames that are transmitted out of sequence. Flow control moderates the transmission of data, meaning that it will manage the speed of the connection if the receiving device is overwhelmed.
+The layer is subdivided by the IEEE into 2 sub-layers: the Logical Link Control (LLC) and Media Access Control (MAC). The LLC layer manages communication over a single link of a network. It supports both connectionless and connection-oriented services used by the higher layers. The MAC layer manages protocol access to the network medium, it also specifies a MAC address which can be used to uniquely identify devices at the Data-link layer.
+
+Network layer
++++++++++++++
+
+The third layer allows for multiple data-links to be combined into a internetwork. It also provides routing. This is done by using logical addressing of a device. The layer supports both connection-oriented and connectionless services from higher layers. The network layer protocols are typically routing protocols but there are also other types of protocols implemented in this layer.
+
+Transport layer
++++++++++++++++
+
+The transport layer allows for reliable internetwork data transport services that can be used by the upper layers. Typical functions are flow control, multiplexing, virtual circuit managing and error checking and recovery. Flow control is managing the transmission rate between devices. Multiplexing enables that data from several applications can be transmitted onto a single physical link. Error checking involves detecting transmission errors while error recovery is resolving any errors that have occurred.
+
+Session layer
++++++++++++++
+
+This layer establishes, manages and terminates communication sessions between upper layer entities.
+
+Presentation layer
+++++++++++++++++++
+
+The sixth layer in the OSI model provides conversion functions. These are used to ensure that the data transmitted through the other layers will be readable by the application layer of a different device. These can include conversion schemes and common data representation formats, but also common data compression and encryption schemes.
+The use of standard representation formats are applied in this layer. These are essential to make that the data can be used on different devices and by different applications. Also that encrypted and compressed data can be decrypted and decompressed.
+
+Application layer
++++++++++++++++++
+
+The last layer is the closest one to the end-user. This means that both the ISO application layer and the user directly can interact with the application. This layer interacts with the software applications that implement a communicating component. Such applications are not included in the scope of the OSI model. 
 
 PROTOCOLS IN THE MODEL
 ----------------------
 
-List of which protocol lives in which layer can be found on the Internet so they will not be listed here to make up the pages. This will be done by cleaver use of fonts and layout. A protocol is a set of formal rules describing how to transmit or exchange data, they are a collection of standards that, again, are designed by the ISO. The protocols that are defined to the OSI model where later adapted to the TCP/IP model.
-The protocols add headers and tailers to the data they process, this allows for the same protocols to process the data if this is moving back up in the stack.
-As the protocols are divided into the 7 layers they handle the movement of data and the way the data is formatted. They respond to different in- and output that they receive. The protocols are also designed to work with the framework provided by the model, this makes them platform independent.
-As there are much protocols that have the same function, they do not differ much as the use the same idea and principles. They need to handle some things:
-- The way data is represented, the formatting of it, especially for exchange.
-- The same for addresses
-- Detection of transmitting errors.
-- A way to verify that data is received.
-- Methods to handle the loss of data, and the recovery of it, the number of retries before another route is chosen.
-- Sequence control.
-- Flow control.
-If the algorithm that makes up the protocol can do all the above things it can be truly called a communicating protocol.
+List of which protocol lives in which layer can be found on the Internet so they will not be listed here to make up the pages. This will be done by clever use of fonts and layout.
+A protocol, in a networking context, is a formal set of rules and conventions that governs how computers exchange information over a network medium. A protocol implements the functions of one or more layers. The protocols that are defined in the OSI model where later adapted to the TCP/IP model.
+Information that needs to travel from one end-application to another one on a different device will be handed down through the layers and send over a physical link, then the information will travel back up through the mode until it arrives at the end-application. As the different protocols handle the data they will add headers and sometimes trailers. This process is know as encapsulation. Theres is a need for this as the receiving layer will need to be told what to do with the data it gets as it is traveling back up through the layers. As the protocols remove the headers and trailers the data makes its way back up in the stack, this is called de-capsulation. 
+
+CONNECTIONS
+-----------
+
+Networking protocols and the flow of data can be separated into two types of connections: connection-oriented or connectionless.
+Connection-oriented service is made up of three steps: connection establishment, data transfer and connection termination. During the connection establishment phase a single path is choice between two devices and the network resources are reserved to ensure a consistent service. Then, in the data-transfer phase, data is transferred sequentially over the single path. Data arrives in the order it is send. After the data-transmission phase, the connection termination phase is initiated, as the established connection is no longer needed the connection is terminated. If there is again a need to transfer data, this will require for a new connection to be established.
+Connection-oriented network service has two disadvantages over connectionless service. The static path makes it so that if somewhere among the path there is a failure that the connection will fail. Also the reserved resources cannot be shared among users, meaning that if the throughput rate isn't maximum, bandwidth is wasted and that makes for an inefficient use of resources. They are useful for transmitting data from applications that do not tolerate delays and packet re-sequencing, like voice and video services.
+Disadvantages of connectionless service is that each packed needs to be fully addressed and is handled independent. As there is no predetermined path where the packages are getting send. However it provides dynamic path selection and dynamic bandwidth allocation. This allows for traffic to be rerouted through failing paths. The bandwidth usage is more efficient as network resources are not reserved. 
 
 SOURCES
 https://tools.ietf.org/html/rfc3439
 http://tools.ietf.org/html/rfc1122
-
 http://www.cisco.com/cpress/home/home.htm
 http://www.cisco.com/cpress/cc/td/cpress/fund/ith/ith01gb.htm
