@@ -1,0 +1,43 @@
+ip addresses
+
+An IP address is a number used to identify nodes in a network. This number can change according to the DHCP and DNS settings in the network. It can also be static.
+There are 2 types of IP addressing methodes currently used, ipv4 and ipv6. This is a outcome of there being not enough ipv4 addresses to accomodate all the nodes in the network. Another solution to this problem is subnetting.
+
+The strukture of IPv4
+---------------------
+
+IPv4 consists of 32 bits, these can be devided into four octets. This means that the strukture looks like this:
+00000000.00000000.00000000.00000000 (the dot '.' is to make the address more readable for humans)
+Each octet can then be converted into a decimal number that is in range between 0 and 255. The address also gets devided into a host and network portion. This is done to provide an addressing scheme that can accommodate variable sizes of networks. The network part start at the most left bit of the address, and the host part is the most right part of the address.
+
+Classes
++++++++
+
+There are 6 classes that are defined to be used. They range between A - E although in the practical world only A, B and C are used as D is used for multicasting and E is for expirimental use.
+The classes can be identified by the network part of the IP address as shown below:
+ADDRESS                             CLASS       RANGE      CIDR
+
+0xxxxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx Class A     1 - 126    /8
+|network|     24-bit node-id      |
+
+10xxxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx Class B   128 - 191    /16
+|     network    | 16-bit node-id |
+
+110xxxxxx.xxxxxxx.xxxxxxxx.xxxxxxxx Class C   192 - 223    /24
+|         network         | 8-bit |
+
+1110xxxxx.xxxxxxx.xxxxxxxx.xxxxxxxx Class D   224 - 239    N/A
+
+11110xxxx.xxxxxxx.xxxxxxxx.xxxxxxxx Class E   240 - 255    N/A
+
+In the A class only the first octet is the network portion, this increases to the first 2 octets in the B class and in the C class only the last octet for the node-id. The node-id part of the address can then be devided by the network manager to devide into subnets. There are some special cases like the 0 and 127, these have a special function to them. The 0 is the default gateway and 127 is the loopback so all the addresses range 127.0.0.0/8 refere to the same address, the localhost. CIDR stands for Classless interdomain routing, and it is used to replace the design based on classes. It allows for non-octet boundaries.
+
+Subnetting
+++++++++++
+
+
+SOURCES:
+http://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html
+http://tools.ietf.org/html/rfc2317
+http://www.faqs.org/rfcs/rfc1817.html
+http://tools.ietf.org/html/rfc5735
