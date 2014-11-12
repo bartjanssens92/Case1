@@ -35,6 +35,17 @@ In the A class only the first octet is the network portion, this increases to th
 Subnetting
 ++++++++++
 
+Subnetting is used to devide a class into multiple networks. This was done to accomadate the fast growing network. Subnetting is just extending the original CIDR and so 'borowing' bits from the host portion of the IP address to the network part. This makes it possible to have other CIDR's like /26, this would be a class C borowing 2 bits:
+
+X.X.X.xx|000000
+|network| host |
+
+This would allow for 63 (1+2+4+8+16+32) hosts on the network as one address (X.X.X.192) is the network ID and X.X.X.255 is the broadcast. So the range is X.X.X.193 - X.X.X.254.
+
+IPv6
+----
+
+The IPv6 protocol was designed to replace the current IPv4. This because of the limited suply of IPv4 addresses. As it uses 128-bit long addresses there are approximatly 3.4*10^38 addresses available. The replacement of IPv4 with IPv6 many cause some issues as the two protocols are not compatible with each other, there are conversion algoritms to solve this problem. IPv6 consists of 128 bits or 8 groups of 4 hexadecimal characters seperated by a colon.
 
 SOURCES:
 http://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html
