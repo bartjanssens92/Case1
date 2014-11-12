@@ -1,19 +1,19 @@
 ip addresses
 
 An IP address is a number used to identify nodes in a network. This number can change according to the DHCP and DNS settings in the network. It can also be static.
-There are 2 types of IP addressing methodes currently used, ipv4 and ipv6. This is a outcome of there being not enough ipv4 addresses to accomodate all the nodes in the network. Another solution to this problem is subnetting.
+There are 2 types of IP addressing methods currently used, ipv4 and ipv6. This is a outcome of there being not enough ipv4 addresses to accommodate all the nodes in the network. Another solution to this problem is sub-netting.
 
-The strukture of IPv4
+The structure of IPv4
 ---------------------
 
-IPv4 consists of 32 bits, these can be devided into four octets. This means that the strukture looks like this:
+IPv4 consists of 32 bits, these can be divided into four octets. This means that the structure looks like this:
 00000000.00000000.00000000.00000000 (the dot '.' is to make the address more readable for humans)
-Each octet can then be converted into a decimal number that is in range between 0 and 255. The address also gets devided into a host and network portion. This is done to provide an addressing scheme that can accommodate variable sizes of networks. The network part start at the most left bit of the address, and the host part is the most right part of the address.
+Each octet can then be converted into a decimal number that is in range between 0 and 255. The address also gets divided into a host and network portion. This is done to provide an addressing scheme that can accommodate variable sizes of networks. The network part start at the most left bit of the address, and the host part is the most right part of the address.
 
 Classes
 +++++++
 
-There are 6 classes that are defined to be used. They range between A - E although in the practical world only A, B and C are used as D is used for multicasting and E is for expirimental use.
+There are 6 classes that are defined to be used. They range between A - E although in the practical world only A, B and C are used as D is used for multi-casting and E is for experimental use.
 The classes can be identified by the network part of the IP address as shown below:
 ADDRESS                             CLASS       RANGE      CIDR
 
@@ -30,12 +30,12 @@ ADDRESS                             CLASS       RANGE      CIDR
 
 11110xxxx.xxxxxxx.xxxxxxxx.xxxxxxxx Class E   240 - 255    N/A
 
-In the A class only the first octet is the network portion, this increases to the first 2 octets in the B class and in the C class only the last octet for the node-id. The node-id part of the address can then be devided by the network manager to devide into subnets. There are some special cases like the 0 and 127, these have a special function to them. The 0 is the default gateway and 127 is the loopback so all the addresses range 127.0.0.0/8 refere to the same address, the localhost. CIDR stands for Classless interdomain routing, and it is used to replace the design based on classes. It allows for non-octet boundaries.
+In the A class only the first octet is the network portion, this increases to the first 2 octets in the B class and in the C class only the last octet for the node-id. The node-id part of the address can then be divided by the network manager to divide into subnets. There are some special cases like the 0 and 127, these have a special function to them. The 0 is the default gateway and 127 is the loopback so all the addresses range 127.0.0.0/8 refere to the same address, the localhost. CIDR stands for Classless inter-domain routing, and it is used to replace the design based on classes. It allows for non-octet boundaries.
 
-Subnetting
+Sub-netting
 ++++++++++
 
-Subnetting is used to devide a class into multiple networks. This was done to accomadate the fast growing network. Subnetting is just extending the original CIDR and so 'borowing' bits from the host portion of the IP address to the network part. This makes it possible to have other CIDR's like /26, this would be a class C borowing 2 bits:
+Sub netting is used to divide a class into multiple networks. This was done to accommodate the fast growing network. Sub-netting is just extending the original CIDR and so 'borrowing' bits from the host portion of the IP address to the network part. This makes it possible to have other CIDR's like /26, this would be a class C borrowing 2 bits:
 
 X.X.X.xx|000000
 |network| host |
@@ -45,7 +45,7 @@ This would allow for 63 (1+2+4+8+16+32) hosts on the network as one address (X.X
 IPv6
 ----
 
-The IPv6 protocol was designed to replace the current IPv4. This because of the limited suply of IPv4 addresses. As it uses 128-bit long addresses there are approximatly 3.4*10^38 addresses available. The replacement of IPv4 with IPv6 many cause some issues as the two protocols are not compatible with each other, there are conversion algoritms to solve this problem. IPv6 consists of 128 bits or 8 groups of 4 hexadecimal characters seperated by a colon.
+The IPv6 protocol was designed to replace the current IPv4. This because of the limited supply of IPv4 addresses. As it uses 128-bit long addresses there are approximately 3.4*10^38 addresses available. The replacement of IPv4 with IPv6 many cause some issues as the two protocols are not compatible with each other, there are conversion algorithms to solve this problem. IPv6 consists of 128 bits or 8 groups of 4 hexadecimal characters separated by a colon.
 
 SOURCES:
 http://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html
