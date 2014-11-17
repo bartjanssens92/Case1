@@ -5,36 +5,36 @@ Introduction
 ------------
 
 DNS stands for Dynamic Name System, it enables the translation of an IP address to a host name. This was done in order to solve problems that were arising as ARPanet was made public.
-As it is easier for a person to remember a name, as that is descriptive of the service it provides, there was a need to be able to translate the name to the IP address. This was first done by maintaning a list that had all the names and IP addresses of all the host. As the number of host gruew, the list became longer and the lookups preformed took longer. This was an issue as the user needed to wait longer and queues began to from. This resulted in useres getting a timeout. The timeout problem was initaly fixed by using secondary and thirdary name servers. This spawned another problem. As the list was maintained manual by the administrators and this made it an untrusted resource as the admin needed to update all the name servers. There was need for a system that allowed organization in a hieragical fasion, that is scalable and that is easy to manage. Enter DNS.
+As it is easier for a person to remember a name, as that is descriptive of the service it provides, there was a need to be able to translate the name to the IP address. This was first done by maintaining a list that had all the names and IP addresses of all the host. As the number of host grew, the list became longer and the lookups preformed took longer. This was an issue as the user needed to wait longer and queues began to from. This resulted in users getting a time-out. The time-out problem was initially fixed by using secondary and thirty name servers. This spawned another problem. As the list was maintained manual by the administrators and this made it an untrusted resource as the admin needed to update all the name servers. There was need for a system that allowed organization in a hierarchical fashion, that is scalable and that is easy to manage. Enter DNS.
 
 DNS
 ---
 
 DNS is build on top of three principles:
-- It must be hieragical, 
+- It must be hierarchical, 
 - It must be able to spread the load, 
 - It must delegate the administration.
 
-Hieragical
-++++++++++
+Hierarchical
+++++++++++++
 
-DNS uses a hieragical system. This means that it is build like a tree, with the top of the tree being the root '.' . Next are the Top-Level Domains (TLDs) and then there are the Second-Level Domains(SLDs) followed by any number of lower levels, seperated by a dot. So for example: graphitedev.dev.inuits.eu, eu is the TLD, inuits is the SLD, dev is a lower level and graphitedev is the hostname of the node in the network.
+DNS uses a hierarchical system. This means that it is build like a tree, with the top of the tree being the root '.' . Next are the Top-Level Domains (TLDs) and then there are the Second-Level Domains(SLDs) followed by any number of lower levels, separated by a dot. So for example: graphitedev.dev.inuits.eu, eu is the TLD, inuits is the SLD, dev is a lower level and graphitedev is the host name of the node in the network.
 TLDs consist of two types:
 - Generic TLDs, these are: .com, .org, ...
 - Country Code TLDs, these are: .be, .se, ...
 
-Deligation
+Delegation
 ++++++++++
 
-The domain authority and delegation are very important in the DNS system. Each node within the network is assigned to and autority, someone that is resposible for the management of that node. The authority for that node can then delegate the authority for the levels under that node within the hierarchy. So lies the authority for the root with ICANN. It in turn delegates. This way the admin that adminsters the node needs to manage the dns record of the node, if he places it inside his own network ofcourse.
+The domain authority and delegation are very important in the DNS system. Each node within the network is assigned to and authority, someone that is responsible for the management of that node. The authority for that node can then delegate the authority for the levels under that node within the hierarchy. So lies the authority for the root with ICANN. It in turn delegates. This way the admin that administrators the node needs to manage the dns record of the node, if he places it inside his own network of course.
 
 Lookups
 -------
 
-Dns lookups happens when a local dns server doesn't know the answer to a querry. In this case it will ask a name server in the level above it for an answer. This proccess will repeat untill an anwer is found. Then the anser will be returned to the node that querried for it. This means that the database is distrebuted. As there isn't a singel server that has all the answers. 
+Dns lookups happens when a local dns server doesn't know the answer to a query. In this case it will ask a name server in the level above it for an answer. This process will repeat until an answer is found. Then the answer will be returned to the node that queried for it. This means that the database is distributed. As there isn't a single server that has all the answers. 
 This is done to spread the load on the servers.
 
-Registartion
+Registration
 ------------
 
 If you want to register a domain name, you will need to contact the ICANN organisation. They will ask you to submit your personal contact information to the WHOIS database. Once you do that and ICANN has entered you into the list, then your address will be publicly available. Your entry will have an expire date, so if you want to keep your domain name you will have to renew it. 

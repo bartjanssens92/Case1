@@ -4,19 +4,19 @@ MODEM
 Introduction
 ------------
 
-The modem is a piece of hardware that allows the translation between analog and digital signals. This is used by the ISPN to connect you to the internet. It makes use of existing copper cables that are also used for telephony.
-Modems are classified by using how much translating they can do in a timeunit, aka mB per s or kB per s.
-Multiple standarts were developed to do this modulating.
+The modem is a piece of hardware that allows the translation between analogue and digital signals. This is used by the ISPN to connect you to the internet. It makes use of existing copper cables that are also used for telephony.
+Modems are classified by using how much translating they can do in a time unit, aka mB per s or kB per s.
+Multiple standards were developed to do this modulating.
 
 Translation
 -----------
 
-A modem 'translates' an digital signal to a analog one and the other way around. This is done by modulation of the signal. The modulation of a signal is done by using the amplitude of the signal. By mapping different binairy values to the amplitude of the signal it can carry a 0 and 1.
-Is was ofcourse not very efficient as the signal can take more as two values for the amplitude. By adding multiple bit together a higher rate could be achieved. This is called multiple amplitude modulation. Next to the amplitude of the signal, the frequenty can change aswel. This is called fase modulation. This is done by mapping diffrent frequencies to bit combinations.
+A modem 'translates' a digital signal to an analogue one and the other way around. This is done by modulation of the signal. The modulation of a signal is done by using the amplitude of the signal. By mapping different binary values to the amplitude of the signal it can carry a 0 and 1.
+Is was of course not very efficient as the signal can take more as two values for the amplitude. By adding multiple bit together a higher rate could be achieved. This is called multiple amplitude modulation. Next to the amplitude of the signal, the frequently can change as well. This is called phase modulation. This is done by mapping different frequencies to bit combinations.
 
-Standarts
+Standards
 ---------
 
-Multiple standarts were developed to do the modulation. The two most common ones are ISDN and ADSL, respecifly Intergrated Services Digital Network and Asymmertric Digital Subscriber Line.
+Multiple standards were developed to do the modulation. The two most common ones are ISDN and ADSL, respectfully Integrated Services Digital Network and Asymmetric Digital Subscriber Line.
 ISDN integrates both speech and data on the same line. The speed on the line was 128kbitps as it used two channels of 64kbitps.
-ADSL uses frequencies that cannot be used for speech for data. This enables the use of speech and data simultaniosly.
+ADSL uses frequencies that cannot be used for speech for data. This enables the use of speech and data simultaneously.
