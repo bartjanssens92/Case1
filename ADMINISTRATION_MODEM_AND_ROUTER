@@ -6,4 +6,47 @@ As most ISPs now integrate the modem and router this chapter will discutes them 
 Belgacom
 --------
 
-The ISP Belgacom (also know as Proximus) delivers a b-box modem/router. This bbox is in the 3th generation now. They claim that it is more powerfull and more efficient but also easier to use. As I have only the b-box 2 I will focus on that model. 
+The ISP Belgacom (also know as Proximus) delivers a b-box modem/router. This bbox is in the 3th generation now. They claim that it is more powerfull and more efficient but also easier to use. As I have only the b-box 2 I will focus on that model. These modems that the company uses are actual a modem and a router together.
+
+Setting up
+----------
+
+The first thing to do is plug in all the cables that come with the modem, depending on what kind of subscription you have the configuration changes. Belgacom offers a comlete pack with internet, telephony and tv included. Therefor it is logical that the user will need to have more and other cables pluged than if the user only uses it for internet. As this is the only use as my home and the others fall outside the scope of this task, it will be the only configuration Ill discust.
+
+There are several ways to have an incomming connection from the provider:
+  - one 5-point contact
+  - one 6-point contact
+  - multiple contacts
+
+One 5-point contact
++++++++++++++++++++
+
+Begin with removing the plug, now plugin the adapter and then the VDSL2 splitter. Next use the VDSL2-cable to connect the bbox and the splitter. Now connect the bbox to power. As the bbox is now powered the on button should light up, if this is not the case then reconnect the power cable to the bbox. If the DSL starts blinkng the bbox is configuring itself. this should take around 2 minutes. Once the on, DSL and the wireless leds start blinking the bbox is ready to use.
+
+One 6-point contact
++++++++++++++++++++
+
+Plugin the VDSL2 splitter, follow the steps above.
+
+Multiple connections
+++++++++++++++++++++
+
+First unplug all the contacts, then find the first contact. This is done by systematicaly disconecting all the socets till there is only on left with a dail-tone. Use the first point and repeat all the above steps.
+
+Internet connection
+++++++++++++++++++++
+
+If the @ led on the bbox is burning, it means that the modem autmaticaly is configured. More specificaly that the login and password automaticaly where setup and dont need to be given to use the internet. Now, using the ethernat cable, connect the bbox to the pc. If the connection is active, the lan leds will start blinking. To see if there is connection to the internet go to a website and see if it loads.
+
+Wifi connection
++++++++++++++++
+
+To setup the wifi connection point your browser to 192.168.1.1 . Were provide the Serial Number of your bbox. This can be found on the bottom of the bbox. If the given SN is correct it will take you to the status page of the bbox. This page gives a quick overview of the connections. To setup the wifi co to Advanced Settings and then Wireless. Here the SSID, Channel, Security, WPA type, Key and Encription can be configured. On the top of the page there is the button to enable and disable the wireless connection. At the bottom of the page there is the option to enable the MAC Filter, this only lets the devices with a certain MAC Adress join the network.
+  - SSID: the 'name' of the network, use a name that is unike so you can easily identify it.
+  - SSID Broadcast checkbox: This makes the SSID visable to everyone.
+  - Channel: this is the freqency where the wireless signal will use, if there are signal strength problems, change this and test the connection. Signal strenght issues are mostly caused by interferance of other routers.
+  - Security: this is to set the encryption type, select WPA/WPA2 to have the most secure.
+  - WPA type: lets you choose the way to outenticate to the network.
+  - Passphrase: enter the password you want to use to authenticate.
+  - Encryption: if the Security is set to WPA use TKIP, if it is WPA2 use AES.
+Click the apply button to use the configuration. Now the wireless can be used with the SSID and the passphrase. 
