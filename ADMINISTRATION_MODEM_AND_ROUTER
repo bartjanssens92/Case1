@@ -50,3 +50,70 @@ To setup the wifi connection point your browser to 192.168.1.1 . Were provide th
   - Passphrase: enter the password you want to use to authenticate.
   - Encryption: if the Security is set to WPA use TKIP, if it is WPA2 use AES.
 Click the apply button to use the configuration. Now the wireless can be used with the SSID and the passphrase. 
+
+Advanced settings
+-----------------
+
+Under the advanced settings there are a number of sub-menus. From top to bottom there are:
+  - Status
+  - Home Network
+  - LAN servers
+  - Wireless
+  - Hotspot
+  - Maintenance
+  - Telephone
+  - System
+  - Firewall
+  - Route
+  - Network Interfaces
+  - Statisics
+
+Status
+++++++
+
+This tab shows the status of the bbox. It contains information about the Internet conection and the Gateway, the wireless connections and shows the logs fro the bbox and the DHCP server. There is also a Vlan list, this shows the connections to the internet and the connection that is used for firmware updates.
+
+Home Network
+++++++++++++
+
+The Home Network tab show the settins for the internal network configuration. These are the IP adress of the bbox and the Subnetmask. It also shows the configuration of the DHCP server.
+
+LAN Servers
++++++++++++
+
+This tab shows the port forwarding on the bbox. This page consists of a table that shows the name, protocol, port range, and the Local IP address. This is where the port forwarding is configured. The user can add a port forwarding rule by clicking New Entry and inputting all the needed information.
+
+Hotspot
++++++++
+
+On the Hotspot tab the user can enable and disable the Belgacom hotspot, it also gives information on the status of the hotspot.
+
+Maintenance
++++++++++++
+
+You would expect a big button that says: "Check for firmware update" but sadly there are only a "Restore to factory default configuration" and a "Reboot" button.
+
+Telephone
++++++++++
+
+The Telephone tab show all the configuration there is to the telephone setup. This can be viewed for the different Lines the user has or in general. There is also a tab that shows the call history.
+
+System
+++++++
+
+This tab shows a list of users on the system, still no "Check for firmware update" button.
+
+Firewall
+++++++++
+
+Here is where all the firewall configuration is done. In the General tab there is the option to choose between default settings on the level of security. The Access Control tab gives the ability to block internet access from within the LAN. So you can prevent a device with a certain adress in your LAN to connect to the internet. The DMZ Host tab does the opposit of the Access Control one, it allows for a device to be fully exposed to the internet. The Port Triggering tab is used to setup wich ports are open to the internet. These can be specified by protocol. Under the Remote Administration tab is a list of checkboxes that can be used to open ports to allow remote administration. This can be port 23 for telnet or port 80 for HTTP access. Under the Website Restriction tab is the option to block certain websites. This means that for a device in the LAN network you can block access to, for example, facebook.com. The advanced filtering enables the user to setup rules for package managment, what to do with packets from certain hosts, etc. Finally the Security Log tab shows, well..., the security log. 
+
+Route
++++++
+
+This tab show the configuration of the DHCP and DNS.
+
+Network Infrafaces
+++++++++++++++++++
+
+This tab shows a list of the available network interfaces on the bbox.
